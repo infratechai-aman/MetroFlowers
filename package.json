@@ -4,6 +4,7 @@
   "description": "Petal & Bloom — Luxury Florist & Event Floral Design Website",
   "main": "server.js",
   "scripts": {
+    "build": "echo 'Static site ready'",
     "start": "node server.js",
     "dev": "node server.js"
   },
