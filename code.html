@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petal &amp; Bloom — Flowers · Events · More</title>
+  <meta name="description" content="Handcrafted bespoke floral arrangements, bridal bouquets, and luxury event floral design. Handpicked with love in Pune.">
+
+  <!-- Tailwind CSS v3 with plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#FBF8F5',
+              surface: '#F5ECE5',
+              card: '#F4ECE4',
+              rose: '#A66B64',
+              roseHover: '#925B54',
+              blush: '#EBDCD4',
+              softBorder: '#E6D7CD',
+              dark: '#2A2523',
+              muted: '#6E645E',
+              sand: '#DFD0C5'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            script: ['"Great Vibes"', 'cursive'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Cormorant Garamond, Great Vibes, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Modular Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#FBF8F5] text-brand-dark antialiased selection:bg-[#E2BEB7] selection:text-brand-dark">
+
+  <!-- ========================================================================
+       TOP NAVIGATION BAR
+       ======================================================================== -->
+  <header class="w-full glass-header sticky top-0 z-40 border-b border-[#F0E6DE]">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 h-24 flex items-center justify-between">
+      
+      <!-- Brand Logo Left -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="text-[#A66B64] transition-transform duration-500 group-hover:rotate-12">
+          <!-- Handcrafted Floral Branch SVG -->
+          <svg fill="none" height="34" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 48 48" width="34">
+            <path d="M14 40c4-12 16-24 28-26M18 28c-4-1-8-5-7-9 3-3 8-1 10 3M28 20c-1-4-5-8-9-7-3 3-1 8 3 10M32 12c-2-3-6-4-8-1-2 3 0 7 4 7M38 8c3 2 4 6 1 8-3 2-7 0-7-4"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-cormorant text-2xl sm:text-[27px] tracking-wide text-brand-dark font-medium leading-none">Petal &amp; Bloom</span>
+          <span class="text-[9px] tracking-[0.28em] font-medium text-brand-muted uppercase mt-1.5">FLOWERS · EVENTS · MORE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-10 text-[12.5px] tracking-[0.18em] font-medium text-brand-muted">
+        <a href="#" class="nav-link text-brand-dark active">HOME</a>
+        <a href="#featured" class="nav-link hover:text-brand-dark transition-colors duration-200">SHOP</a>
+        <a href="#services" class="nav-link hover:text-brand-dark transition-colors duration-200">EVENTS</a>
+        <a href="#build-bouquet" class="nav-link hover:text-brand-dark transition-colors duration-200">ABOUT</a>
+        <a href="#contact" class="nav-link hover:text-brand-dark transition-colors duration-200">CONTACT</a>
+      </nav>
+
+      <!-- Right Utility Actions (Search, Cart & Mobile Toggle) -->
+      <div class="flex items-center space-x-5 sm:space-x-6 text-brand-dark">
+        <!-- Search Trigger -->
+        <button id="search-btn" aria-label="Search" class="hover:text-brand-rose transition-colors p-1">
+          <svg fill="none" height="21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="21">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Cart Trigger with Counter Badge -->
+        <button id="cart-btn" aria-label="Shopping Bag" class="relative hover:text-brand-rose transition-colors p-1">
+          <svg fill="none" height="21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="21">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count absolute -top-1.5 -right-2 min-w-[17px] h-[17px] px-1 rounded-full bg-brand-rose text-white text-[9px] font-bold flex items-center justify-center shadow-xs">0</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-menu-toggle" aria-label="Open Mobile Menu" class="md:hidden p-1 hover:text-brand-rose transition-colors">
+          <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22">
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <line x1="3" x2="21" y1="12" y2="12"></line>
+            <line x1="3" x2="21" y1="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#FBF8F5] via-[#FAF3EE] to-[#FBF8F5] pt-8 pb-16 lg:py-20">
+    <!-- Full Bleed Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img alt="Elegant florist holding romantic bridal bouquet" class="w-full h-full object-cover object-center lg:object-right" src="https://lh3.googleusercontent.com/aida/AEtjO1VoZ2W-MXDf3fW8eAYgeXjjHUT83OSv3x3myOA9GgF4CAn8E1onm83hru5KjaYLDuXax6FOFJ9PSLDVPWHO8ep_JDenwtw90ssWXsRawSYxTacaG-1ghH28wIDmv470D7ihjDYzSa55g4hI_h28zz8FZYTQq3dlXaWcRaC6R1Mqk1kKjbBBG6PXloViLVCrv_i3Qwy-xjHAVA_3lewoo_Zaxgce3xwAsj5tthmPWTPndO-GG2nR4G4-FgY">
+      <!-- Left Gradient Wash for High Readability of Typography -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FBF8F5] via-[#FBF8F5]/90 to-transparent lg:via-[#FBF8F5]/80"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#FBF8F5] via-transparent to-transparent sm:hidden"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-16 lg:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[480px] lg:min-h-[560px]">
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 flex flex-col items-start pr-0 lg:pr-6 max-w-2xl">
+          <!-- Category Tracker Header -->
+          <div class="flex items-center space-x-3 mb-6">
+            <span class="text-[11px] font-medium tracking-[0.25em] text-[#8C7B73] uppercase">
+              FRESH FLOWERS &nbsp;/&nbsp; ELEGANT EVENTS
+            </span>
+            <div class="h-[1px] w-8 bg-[#8C7B73]/40"></div>
+          </div>
+          <!-- Hero Headline -->
+          <h1 class="font-cormorant text-5xl sm:text-6xl md:text-7xl font-normal leading-[1.08] tracking-tight text-brand-dark mb-6">
+            Flowers for every<br>
+            kind of <span class="font-cormorant italic text-[#B47065] font-light">celebration.</span>
+          </h1>
+          <!-- Hero Subtitle -->
+          <p class="font-cormorant italic text-xl sm:text-2xl text-[#6B5F58] font-light leading-relaxed mb-9 max-w-lg">
+            From everyday bouquets to breathtaking event décor, we bring your moments to life with flowers.
+          </p>
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 mb-14">
+            <a href="#featured" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#A66B64] hover:bg-[#925B54] text-white text-[12px] font-medium tracking-[0.15em] uppercase transition-all duration-300 shadow-sm hover:shadow">
+              SHOP BOUQUETS <span class="ml-2 font-serif text-sm">→</span>
+            </a>
+            <a href="#services" class="event-inquiry-trigger inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-[#967C74] hover:border-brand-dark text-[#4E443F] hover:text-brand-dark text-[12px] font-medium tracking-[0.15em] uppercase transition-all duration-300 bg-white/40 backdrop-blur-xs">
+              DESIGN MY EVENT <span class="ml-2 font-serif text-sm">→</span>
+            </a>
+          </div>
+          <!-- Micro-Badge / Brand Note -->
+          <div class="flex items-center space-x-3 text-[#99877E] pt-2 border-t border-[#EDE0D6] w-full max-w-md">
+            <svg class="text-[#B57C73]" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24" width="20">
+              <path d="M12 21a9 9 0 0 0 9-9c0-4.97-4.03-9-9-9-4.97 0-9 4.03-9 9 0 3.6 2.12 6.7 5.19 8.13"></path>
+              <path d="M12 7v5l3 3"></path>
+            </svg>
+            <span class="text-[10px] sm:text-[11px] font-medium tracking-[0.22em] uppercase">
+              BEAUTIFUL FLOWERS. MEANINGFUL MOMENTS.
+            </span>
+          </div>
+        </div>
+        <!-- Right spacer column to reveal bouquet image -->
+        <div class="hidden lg:block lg:col-span-5"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FEATURED BOUQUETS SECTION
+       ======================================================================== -->
+  <section class="py-20 lg:py-28 bg-[#FAF4EF] border-y border-[#EFE5DC] relative" id="featured">
+    <!-- Botanical Line Art in Background -->
+    <div class="absolute left-3 top-24 pointer-events-none opacity-20 text-[#A66B64] hidden xl:block">
+      <svg fill="none" height="200" stroke="currentColor" stroke-width="1.2" viewBox="0 0 100 200" width="110">
+        <path d="M10 190 Q 60 130 30 70 T 80 10"></path>
+        <path d="M30 140 C 10 130 5 110 20 100 C 35 110 30 130 30 140 Z"></path>
+        <path d="M45 100 C 65 95 70 75 55 65 C 40 75 45 95 45 100 Z"></path>
+        <path d="M25 60 C 5 50 10 30 25 25 C 35 35 30 55 25 60 Z"></path>
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left Header Description Column -->
+        <div class="lg:col-span-3 flex flex-col items-start pr-0 lg:pr-4 pt-2">
+          <div class="flex items-center space-x-2.5 mb-4">
+            <span class="text-[10.5px] font-medium tracking-[0.24em] text-[#8A7971] uppercase">FEATURED BOUQUETS</span>
+            <div class="h-[1px] w-6 bg-[#8A7971]/50"></div>
+          </div>
+          <h2 class="font-cormorant text-4xl sm:text-5xl font-normal leading-tight text-brand-dark mb-4">
+            Handpicked<br>with love.
+          </h2>
+          <p class="text-sm text-[#756A63] leading-relaxed mb-8">
+            Fresh blooms, elegant wraps, thoughtful details — just for you.
+          </p>
+          <a href="#build-bouquet" class="inline-flex items-center px-6 py-2.5 rounded-full border border-[#8C7A72] text-[#443B36] hover:bg-white/80 transition-all duration-300 text-[11.5px] tracking-[0.16em] uppercase font-medium">
+            BROWSE ALL <span class="ml-2 font-serif text-sm">→</span>
+          </a>
+        </div>
+
+        <!-- Right 4 Arched Cards -->
+        <div class="lg:col-span-9 grid grid-cols-2 md:grid-cols-4 gap-5 lg:gap-6">
+          
+          <!-- Card 1: Blush Romance -->
+          <div class="group flex flex-col">
+            <div class="arch-card-top bg-[#EAE0D8] aspect-[3/4] sm:aspect-[4/5] relative shadow-md">
+              <img alt="Blush Romance Bouquet" class="image-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmFAzfHav1YM2P6dWno9-73Y5_yJQhU9Et1CkwCtvFiFOhLLAL5tTdgV_DsZdXuAFWzGAR8rYHSv5KUoZSiZCzJPHgrUnzEkmPM4AdKfzl1doc_nZfQfMjs3HZ_xGrjiHlF9SPdIA0w3FHiFBzKzNlDB5Lx22RLOREqk8YzxdZ5ehaZBDZhBq59q2zcnv-vlUijlvcP4uCM_0L-RVqky924eXgog2EpgF6xZBZCl9YWNiINB8Bn8at3w">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-3">
+                <button class="add-to-cart-btn px-4 py-1.5 rounded-full bg-white/95 text-brand-dark text-[11px] font-semibold tracking-wider uppercase hover:bg-brand-rose hover:text-white transition-all shadow-md" data-id="blush-romance">
+                  + Add to Bag
+                </button>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <h3 class="font-cormorant text-lg font-medium text-brand-dark">Blush Romance</h3>
+                <p class="text-xs text-[#6F645D] font-sans mt-0.5">₹2,499</p>
+              </div>
+              <button aria-label="Add to wishlist" class="wishlist-btn text-[#A5958D] hover:text-brand-rose" data-id="blush-romance">
+                <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Pure Grace -->
+          <div class="group flex flex-col">
+            <div class="arch-card-top bg-[#EAE0D8] aspect-[3/4] sm:aspect-[4/5] relative shadow-md">
+              <img alt="Pure Grace Bouquet" class="image-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3m3zCBSiadNfqKWD179DH4TeNSmvpKur4mjxxT8OBdcx2QR8iv6FmgVZR4G0pw_zkWs5J3sI1anzlFV0IP1bAKOcx0VXzJmMYbw67_sxmgEKzkvVJFjQQeAorpKZ8RrDF_5_cI5DURVOEeRQonFl8GA-whdzSrX4vBr6Z9rvBXBsmBUf_o9gKpj_kgrRZPsN_7m3SEEWn2Ssdh5T7zSSa_EJJie4MoEq9lFSeW7_Ep36zS-bCiwja1A">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-3">
+                <button class="add-to-cart-btn px-4 py-1.5 rounded-full bg-white/95 text-brand-dark text-[11px] font-semibold tracking-wider uppercase hover:bg-brand-rose hover:text-white transition-all shadow-md" data-id="pure-grace">
+                  + Add to Bag
+                </button>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <h3 class="font-cormorant text-lg font-medium text-brand-dark">Pure Grace</h3>
+                <p class="text-xs text-[#6F645D] font-sans mt-0.5">₹2,999</p>
+              </div>
+              <button aria-label="Add to wishlist" class="wishlist-btn text-[#A5958D] hover:text-brand-rose" data-id="pure-grace">
+                <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Lavender Dreams -->
+          <div class="group flex flex-col">
+            <div class="arch-card-top bg-[#EAE0D8] aspect-[3/4] sm:aspect-[4/5] relative shadow-md">
+              <img alt="Lavender Dreams Bouquet" class="image-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj1Vd_UMJGY8e11SToSmybn81ryV7K8z4T9EfD3FOmGTOFsHv8oaO1rkoRnjDlElTHGBZK_ThO1MOI6fCMcxe_GqkJ6FCAgMJdt5tVsQZ7TDGGhZESw-sTYNK9Y5nlflyxq4LEZnul0QDa8ONaefcWSG2WEgYOVEoDATNQHleaaH-mhfkwX-G6IlGYwh-smS2m8tiiKZzR3WoiHqih5iCMd7-b-z1UUdFO6WtQEmsTdWsbl0DHxAoiSg">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-3">
+                <button class="add-to-cart-btn px-4 py-1.5 rounded-full bg-white/95 text-brand-dark text-[11px] font-semibold tracking-wider uppercase hover:bg-brand-rose hover:text-white transition-all shadow-md" data-id="lavender-dreams">
+                  + Add to Bag
+                </button>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <h3 class="font-cormorant text-lg font-medium text-brand-dark">Lavender Dreams</h3>
+                <p class="text-xs text-[#6F645D] font-sans mt-0.5">₹3,499</p>
+              </div>
+              <button aria-label="Add to wishlist" class="wishlist-btn text-[#A5958D] hover:text-brand-rose" data-id="lavender-dreams">
+                <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Golden Hour -->
+          <div class="group flex flex-col">
+            <div class="arch-card-top bg-[#EAE0D8] aspect-[3/4] sm:aspect-[4/5] relative shadow-md">
+              <img alt="Golden Hour Bouquet" class="image-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkujwejbK11O-Iurykm1L_dXwYVpT_eoPFPOzLuCb1D8talU7x_lxY9DfNQGWk4fohe05s3x8s7F_Fkg7QbB_GBCbk8kihfH_DYZ4i7-z9wOssE1lZZbwaRVDeFBP1_XjxyCPaBrp2uq--2j-lrklbrlD4vcACCtctYp4CHrRmjuSz1YknBYyld4r_b2kx70y9O8eme6cECzV6oSuJNU83qYfU5oP8mveJwPEtROA6-sg82_PR59c6IQ">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-3">
+                <button class="add-to-cart-btn px-4 py-1.5 rounded-full bg-white/95 text-brand-dark text-[11px] font-semibold tracking-wider uppercase hover:bg-brand-rose hover:text-white transition-all shadow-md" data-id="golden-hour">
+                  + Add to Bag
+                </button>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <h3 class="font-cormorant text-lg font-medium text-brand-dark">Golden Hour</h3>
+                <p class="text-xs text-[#6F645D] font-sans mt-0.5">₹2,799</p>
+              </div>
+              <button aria-label="Add to wishlist" class="wishlist-btn text-[#A5958D] hover:text-brand-rose" data-id="golden-hour">
+                <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       BUILD YOUR OWN BOUQUET SECTION
+       ======================================================================== -->
+  <section class="py-16 sm:py-24 bg-[#FBF8F5]" id="build-bouquet">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      
+      <!-- Feature Card Container -->
+      <div class="relative bg-[#F4EDE7] rounded-3xl overflow-hidden border border-[#E9DFD8] shadow-lg shadow-amber-950/5">
+        
+        <!-- Floral Branch Accent Top Right -->
+        <div class="absolute right-0 top-0 pointer-events-none p-4 opacity-40 text-[#A66B64] hidden sm:block">
+          <svg fill="none" height="140" stroke="currentColor" stroke-width="1.2" viewBox="0 0 120 120" width="140">
+            <path d="M120 10 C 90 20 60 50 60 110"></path>
+            <path d="M100 40 C 90 25 80 15 65 25 C 60 40 85 45 100 40 Z"></path>
+            <path d="M75 75 C 60 65 50 55 40 65 C 40 80 65 85 75 75 Z"></path>
+            <path d="M115 15 C 105 5 95 0 85 8 C 85 20 105 20 115 15 Z"></path>
+          </svg>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left: Florist Crafting Photo -->
+          <div class="lg:col-span-5 h-full min-h-[320px] lg:min-h-[460px] relative overflow-hidden">
+            <img alt="Florist arranging delicate flowers at boutique studio workshop" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcOQ8Fx0yYZRe_BPOXcvCVGReiFnsipLZ6pBVA-xJm1oidVdZE3ZK0IpVThaB43wN9uIaaG37k3LMC7Q1dSeA84uuDEm0rLZ4AOqsdqi_cGRQxU3Nf4yvjh3etMTSxxb5TeuYqNh4b4uwumj0F-sgULV8yswbeCMj0e9fxiM_Z6uYsGzlZAC6K8_SwEFip-WWIAodJLzH8OSI5h2jArJPtB02FeDimpXc3qgwpv0_ve3apBgfNt-fGZw">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#F4EDE7]/30 lg:to-[#F4EDE7]/50 pointer-events-none"></div>
+          </div>
+
+          <!-- Right: Process & Builder Steps -->
+          <div class="lg:col-span-7 p-6 sm:p-10 lg:pl-4 lg:pr-12">
+            <div class="flex items-center space-x-2.5 mb-2">
+              <span class="text-[10px] sm:text-[11px] font-medium tracking-[0.22em] text-[#8C7B73] uppercase">CUSTOM BOUQUET</span>
+              <div class="h-[1px] w-6 bg-[#8C7B73]/50"></div>
+            </div>
+            
+            <h2 class="font-cormorant text-4xl sm:text-5xl font-normal text-brand-dark leading-tight mb-1">
+              Build Your Own<br>Bouquet
+            </h2>
+            <p class="font-script text-2xl sm:text-3xl text-[#A66B64] mb-8 font-normal">
+              Your flowers. Your story.
+            </p>
+
+            <!-- 6 Interactive Step Buttons -->
+            <div class="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-2 mb-10 items-start">
+              
+              <!-- Step 1 -->
+              <div class="start-builder-trigger flex flex-col items-center text-center group cursor-pointer" data-step="1">
+                <div class="w-12 h-12 rounded-full bg-[#E8DDD4] flex items-center justify-center text-brand-dark border border-[#DCCEC3] mb-2 group-hover:border-brand-rose group-hover:bg-[#E2BEB7] transition-all">
+                  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24" width="20">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 4 3s4-1 4-3a4 4 0 0 0-4-4z"></path>
+                    <path d="M12 22a4 4 0 0 0 4-4c0-2-2-3-4-3s-4 1-4 3a4 4 0 0 0 4 4z"></path>
+                    <path d="M22 12a4 4 0 0 0-4-4c-2 0-3 2-3 4s1 4 3 4a4 4 0 0 0 4-4z"></path>
+                    <path d="M2 12a4 4 0 0 0 4 4c2 0 3-2 3-4s-1-4-3-4a4 4 0 0 0-4 4z"></path>
+                  </svg>
+                </div>
+                <span class="text-[11px] font-medium text-brand-dark leading-snug">Choose<br>flowers</span>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="start-builder-trigger flex flex-col items-center text-center group cursor-pointer" data-step="2">
+                <div class="w-12 h-12 rounded-full bg-[#E8DDD4] flex items-center justify-center text-brand-dark border border-[#DCCEC3] mb-2 group-hover:border-brand-rose group-hover:bg-[#E2BEB7] transition-all">
+                  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24" width="20">
+                    <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                    <rect height="5" width="20" x="2" y="7"></rect>
+                    <line x1="12" x2="12" y1="22" y2="7"></line>
+                    <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                    <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                  </svg>
+                </div>
+                <span class="text-[11px] font-medium text-brand-dark leading-snug">Choose<br>quantity</span>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="start-builder-trigger flex flex-col items-center text-center group cursor-pointer" data-step="3">
+                <div class="w-12 h-12 rounded-full bg-[#E8DDD4] flex items-center justify-center text-brand-dark border border-[#DCCEC3] mb-2 group-hover:border-brand-rose group-hover:bg-[#E2BEB7] transition-all">
+                  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24" width="20">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" x2="12" y1="22.08" y2="12"></line>
+                  </svg>
+                </div>
+                <span class="text-[11px] font-medium text-brand-dark leading-snug">Choose<br>wrapping</span>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="start-builder-trigger flex flex-col items-center text-center group cursor-pointer" data-step="4">
+                <div class="w-12 h-12 rounded-full bg-[#E8DDD4] flex items-center justify-center text-brand-dark border border-[#DCCEC3] mb-2 group-hover:border-brand-rose group-hover:bg-[#E2BEB7] transition-all">
+                  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24" width="20">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    <circle cx="8.5" cy="10.5" fill="currentColor" r="0.75"></circle>
+                    <circle cx="12" cy="10.5" fill="currentColor" r="0.75"></circle>
+                    <circle cx="15.5" cy="10.5" fill="currentColor" r="0.75"></circle>
+                  </svg>
+                </div>
+                <span class="text-[11px] font-medium text-brand-dark leading-snug">Add<br>message</span>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="start-builder-trigger flex flex-col items-center text-center group cursor-pointer" data-step="5">
+                <div class="w-12 h-12 rounded-full bg-[#E8DDD4] flex items-center justify-center text-brand-dark border border-[#DCCEC3] mb-2 group-hover:border-brand-rose group-hover:bg-[#E2BEB7] transition-all">
+                  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24" width="20">
+                    <rect height="13" width="15" x="1" y="3"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                </div>
+                <span class="text-[11px] font-medium text-brand-dark leading-snug">Delivery /<br>Pickup</span>
+              </div>
+
+              <!-- Step 6 -->
+              <div class="start-builder-trigger flex flex-col items-center text-center group cursor-pointer" data-step="6">
+                <div class="w-12 h-12 rounded-full bg-[#E8DDD4] flex items-center justify-center text-brand-dark border border-[#DCCEC3] mb-2 group-hover:border-brand-rose group-hover:bg-[#E2BEB7] transition-all">
+                  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24" width="20">
+                    <rect height="16" rx="2" width="20" x="2" y="4"></rect>
+                    <line x1="2" x2="22" y1="10" y2="10"></line>
+                    <line x1="6" x2="8" y1="15" y2="15"></line>
+                  </svg>
+                </div>
+                <span class="text-[11px] font-medium text-brand-dark leading-snug">Checkout</span>
+              </div>
+
+            </div>
+
+            <!-- Start Building Action Button -->
+            <button class="start-builder-trigger inline-flex items-center px-7 py-3 rounded-full border border-[#8C7A72] text-[#423934] hover:bg-white hover:border-brand-dark transition-all duration-300 text-[11px] tracking-[0.16em] uppercase font-medium" data-step="1">
+              START BUILDING <span class="ml-2 font-serif text-sm">→</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       EVENT FLORAL DESIGN SERVICES SECTION
+       ======================================================================== -->
+  <section class="py-20 lg:py-28 bg-[#FBF8F5]" id="services">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left Section Info -->
+        <div class="lg:col-span-3 flex flex-col items-start pt-2">
+          <div class="flex items-center space-x-2 mb-3">
+            <span class="text-[11px] font-medium tracking-[0.24em] text-[#8C7B73] uppercase">OUR SERVICES</span>
+            <div class="h-[1px] w-6 bg-[#8C7B73]/50"></div>
+          </div>
+          <h2 class="font-cormorant text-4xl sm:text-5xl font-normal leading-tight text-brand-dark mb-4">
+            Event Floral<br>Design
+          </h2>
+          <p class="font-cormorant italic text-lg text-[#6E635C] leading-snug mb-8">
+            Turning your special moments into unforgettable ones.
+          </p>
+          <button class="event-inquiry-trigger inline-flex items-center px-6 py-2.5 rounded-full border border-[#8A7971] text-[#3E3530] hover:bg-[#F2E8E0] hover:border-brand-dark transition-colors duration-300 text-[11px] tracking-[0.16em] uppercase font-medium" data-service="Weddings">
+            EXPLORE ALL SERVICES <span class="ml-2 font-serif text-sm">→</span>
+          </button>
+        </div>
+
+        <!-- Right 5 Vertical Tall Category Cards -->
+        <div class="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 sm:gap-4">
+          
+          <!-- Service Card 1: Weddings -->
+          <div class="event-inquiry-trigger group relative rounded-2xl overflow-hidden aspect-[9/16] shadow-md cursor-pointer" data-service="Weddings">
+            <img alt="Weddings floral arch arrangement" class="image-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdkm6ZNpQE4WyZXTWPE1ACzHR7aNFeYmMkc10SCoVVUsk5_LS41XgqXulSoIyIoV7h1dC6VexKdFQcaVWTrlQ2vW0xvRwCR80YsgsiXN1xmuHj9fYgrzvVE4tq26LxD_AmSZrVFViSZqRoH6KAUt8bKCi5Bd5OJFO0dJzanRrwxJ0_NVjJpc63d5nHFbAYLkT_2CupNCXRhAa_GbG5ijLEMBTWfsw681lgL1a77LdzznrvuEdr8iQANA">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#221B19]/85 via-[#221B19]/25 to-transparent"></div>
+            <div class="absolute bottom-4 inset-x-0 text-center">
+              <span class="text-[11px] font-semibold tracking-[0.22em] text-white/95 uppercase group-hover:text-brand-blush transition-colors">
+                WEDDINGS
+              </span>
+            </div>
+          </div>
+
+          <!-- Service Card 2: Birthdays -->
+          <div class="event-inquiry-trigger group relative rounded-2xl overflow-hidden aspect-[9/16] shadow-md cursor-pointer" data-service="Birthdays">
+            <img alt="Birthdays floral candle celebration" class="image-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjnV5hfI9reh8TbC8CR7D7rVrqhcge9BGKK8ctZoyloGNe2qf1PMq2zmg7mhs59W81ZZZbsVh868YaL8i1GdjXBrzKR3o5Btqk-oG5DQR8VqiIIPcYUDTL8Xz71C83iuKS5FZT-_rQyf4rG7oenSHapIU9gOy35Yg3KOPoPrumhykN_x9RttOKKa71Cbz0Cp-l2AmRrC6hT58BQO_z4fhCxUc0AD1u7jWYslO1LrIpwTHutwkQmX4-rg">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#221B19]/85 via-[#221B19]/25 to-transparent"></div>
+            <div class="absolute bottom-4 inset-x-0 text-center">
+              <span class="text-[11px] font-semibold tracking-[0.22em] text-white/95 uppercase group-hover:text-brand-blush transition-colors">
+                BIRTHDAYS
+              </span>
+            </div>
+          </div>
+
+          <!-- Service Card 3: Cars -->
+          <div class="event-inquiry-trigger group relative rounded-2xl overflow-hidden aspect-[9/16] shadow-md cursor-pointer" data-service="Luxury Car Décor">
+            <img alt="Luxury floral garland wedding car decor" class="image-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkEAMAriJC2GdylpKAExpxsWJQbUyFtXUtgxjmVanmvvupalM8OzYzpodbvWmqOQea8bwo9VslPvB_EngTiFdasVp-t6YaXVXSXtA33sSbUpBlKOUf_uxdykltZwTViqkvV6q6MAir3cR4usXBK-u5gb5Z1NPEMTIF_rtA3H1X_G2-oOc11q5LEIfqa1VCNDyrMY4VvUOXYP1TZjkmxVFFy7SF8-yVRHJppi1V2uqdUluVlyXDpslEmw">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#221B19]/85 via-[#221B19]/25 to-transparent"></div>
+            <div class="absolute bottom-4 inset-x-0 text-center">
+              <span class="text-[11px] font-semibold tracking-[0.22em] text-white/95 uppercase group-hover:text-brand-blush transition-colors">
+                CARS
+              </span>
+            </div>
+          </div>
+
+          <!-- Service Card 4: Stages -->
+          <div class="event-inquiry-trigger group relative rounded-2xl overflow-hidden aspect-[9/16] shadow-md cursor-pointer" data-service="Stages & Backdrops">
+            <img alt="Floral backdrop luxury event stage" class="image-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbqunpE7mVNPu1dK88ePSFFNzEuf2YRZEdZ5cD3m5Bo2DlY9VpRDRmzMh7sk8ukOtibNPv0U8mly8K4a_HzW71P-ZNJhgBAfJq4KDsJojnB0wNohYO1Scn1yFZ2WCdqnrpjaZXLW5a937_VUy_bXmjKHl3oAOqF5CQ52_rN714FqWelvDvZDjGd8iJ4MpOpkkl9vYdcKnkLiw1idb4k9X2CadWv07IwqgkBBg3RBIyBg6ZR5XSSwoTQA">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#221B19]/85 via-[#221B19]/25 to-transparent"></div>
+            <div class="absolute bottom-4 inset-x-0 text-center">
+              <span class="text-[11px] font-semibold tracking-[0.22em] text-white/95 uppercase group-hover:text-brand-blush transition-colors">
+                STAGES
+              </span>
+            </div>
+          </div>
+
+          <!-- Service Card 5: Corporate -->
+          <div class="event-inquiry-trigger group relative rounded-2xl overflow-hidden aspect-[9/16] shadow-md cursor-pointer" data-service="Corporate Galas">
+            <img alt="Corporate dinner event floral decor" class="image-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmb5cC7dzoBdy1GPxDNsauNKvTIvwmxTu7E-RwjjOCKkg_q5OdF8hZs3AN9ZMT6Al0niBKN0i1pklDmDQ0jhk1axQAsV0EiIyP1EuhhQdV4CpX4IORO86f2O_4MXZaaHQHq_YG9dnPvsXdU1ayYK0VGZadAhPuEdl5-Efcc7Vjo3sU-Cb52tN5FjKwen4pbqFO73-lhygFfR-yH9xIxcIJHRzxQjx5UBp-f4eb6C56FNQNkDnQzdWJEA">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#221B19]/85 via-[#221B19]/25 to-transparent"></div>
+            <div class="absolute bottom-4 inset-x-0 text-center">
+              <span class="text-[11px] font-semibold tracking-[0.22em] text-white/95 uppercase group-hover:text-brand-blush transition-colors">
+                CORPORATE
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER & BANNER SECTION
+       ======================================================================== -->
+  <footer class="relative overflow-hidden bg-[#EFE4DC] border-t border-[#E6D7CD]" id="contact">
+    <!-- Warm Romantic Background Roses Overlay -->
+    <div class="absolute inset-0 z-0 opacity-25 mix-blend-multiply pointer-events-none">
+      <img alt="Rose floral backdrop texture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALybEK8ZP9MtpxhVr0B94vHDKZCP_WPIYrji8yZYV4e56isxO1z3Gn1M9ztJWmBbMyJW1gXThs4MC4fNPhYDlR2PWzj1PZP3HnIM1HmrWXNRttUYq3MtDczh9hRd5f0zGD2GLWR67LhSOQzk9WbvIFj-LU3gSOMOS5TgjxO_1WYmkPsvR_JOQSeaBTIWd88bpmV84SZvPmbMtEAf4HacvcU__beKEPsOjfpH9jZl0uYrCEiEKBI9f8gA">
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-20">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Decorative Flower Emblem -->
+        <div class="hidden md:flex md:col-span-3 items-center">
+          <div class="w-16 h-16 rounded-full bg-white/40 flex items-center justify-center text-[#A66B64] backdrop-blur-xs shadow-xs">
+            <svg fill="none" height="32" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" width="32">
+              <path d="M12 21a9 9 0 0 0 9-9c0-4.97-4.03-9-9-9-4.97 0-9 4.03-9 9 0 3.6 2.12 6.7 5.19 8.13"></path>
+              <path d="M12 8c-2.5 0-4 1.8-4 4s1.5 4 4 4 4-1.8 4-4-1.5-4-4-4z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Center: Emotional Brand Hook -->
+        <div class="md:col-span-6 text-center flex flex-col items-center">
+          <span class="font-script text-3xl sm:text-4xl text-[#78645D]">
+            Let's make it
+          </span>
+          <h3 class="font-cormorant text-4xl sm:text-5xl font-medium tracking-tight text-brand-dark mt-1 mb-4">
+            Beautiful Together.
+          </h3>
+          <!-- Delicate Hand Drawn Floral Motif Separator -->
+          <div class="flex items-center justify-center space-x-3 text-[#A66B64]/80">
+            <div class="w-8 h-[1px] bg-[#A66B64]/40"></div>
+            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" viewBox="0 0 24 24" width="20">
+              <path d="M12 4v16m-6-10l6 4 6-4"></path>
+            </svg>
+            <div class="w-8 h-[1px] bg-[#A66B64]/40"></div>
+          </div>
+        </div>
+
+        <!-- Right: Visit Our Shop & Directions CTA -->
+        <div class="md:col-span-3 flex flex-col items-center md:items-end text-center md:text-right">
+          <div class="flex items-center space-x-2 text-brand-dark font-medium mb-1">
+            <svg class="text-brand-rose" fill="none" height="15" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="15">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="font-serif text-lg text-brand-dark">Visit Our Shop</span>
+          </div>
+          <p class="text-xs text-[#6F635D] leading-relaxed">
+            123 Flower Lane, Pune<br>
+            <span class="text-[11px] text-[#8C7E77]">Mon - Sat &nbsp;|&nbsp; 9:00 AM - 7:00 PM</span>
+          </p>
+          <button class="directions-trigger mt-4 inline-flex items-center px-5 py-2 rounded-full border border-[#8C7971] text-[#423934] hover:bg-white/90 hover:border-brand-dark transition-all duration-300 text-[10.5px] tracking-[0.16em] uppercase font-medium">
+            GET DIRECTIONS <span class="ml-2 font-serif text-sm">→</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Bottom Credits & Copyright -->
+      <div class="mt-14 pt-6 border-t border-[#DECFC5] flex flex-col sm:flex-row items-center justify-between text-xs text-[#8A7D76]">
+        <p>© 2025 Petal &amp; Bloom Floristry. Handcrafted moments with love.</p>
+        <div class="flex space-x-6 mt-4 sm:mt-0">
+          <a href="#" class="hover:text-brand-dark transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-brand-dark transition-colors">Terms of Service</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="hover:text-brand-dark transition-colors">Instagram</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       SLIDE-OVER CART DRAWER
+       ======================================================================== -->
+  <div id="cart-backdrop" class="drawer-backdrop fixed inset-0 bg-black/50 z-50"></div>
+  <aside id="cart-drawer" class="cart-drawer fixed top-0 right-0 h-full w-full max-w-md bg-[#FAF6F2] shadow-2xl z-50 flex flex-col border-l border-[#EFE4DC]">
+    <!-- Header -->
+    <div class="p-6 border-b border-[#EFE4DC] flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <h3 class="font-cormorant text-2xl font-medium text-brand-dark">Your Shopping Bag</h3>
+        <span class="text-xs bg-[#EBDCD4] text-brand-dark font-semibold px-2 py-0.5 rounded-full"><span class="cart-count">0</span> items</span>
+      </div>
+      <button id="close-cart-btn" aria-label="Close Bag" class="text-brand-muted hover:text-brand-dark p-1">
+        <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20">
+          <line x1="18" x2="6" y1="6" y2="18"></line>
+          <line x1="6" x2="18" y1="6" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Items List -->
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+      <!-- Injected via JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="cart-empty-state" class="flex-1 flex flex-col items-center justify-center p-8 text-center hidden">
+      <div class="w-16 h-16 rounded-full bg-[#EFE4DC] flex items-center justify-center text-[#A66B64] mb-4">
+        <svg fill="none" height="28" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" width="28">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" x2="21" y1="6" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      </div>
+      <h4 class="font-cormorant text-2xl font-medium text-brand-dark mb-1">Your bag is empty</h4>
+      <p class="text-xs text-[#8A7971] max-w-xs mb-6">Discover our fresh signature bouquets or build your own custom arrangement.</p>
+      <a href="#featured" onclick="closeCart()" class="inline-flex items-center px-6 py-2.5 rounded-full bg-[#A66B64] text-white text-xs font-medium uppercase tracking-wider hover:bg-[#925B54] transition-colors">
+        EXPLORE BOUQUETS
+      </a>
+    </div>
+
+    <!-- Footer Summary -->
+    <div id="cart-footer" class="p-6 border-t border-[#EFE4DC] bg-[#F5EDE6]">
+      <div class="flex justify-between items-center mb-2">
+        <span class="text-xs tracking-wider uppercase text-[#8A7971]">Subtotal</span>
+        <span id="cart-subtotal" class="font-cormorant text-2xl font-medium text-brand-dark">₹0</span>
+      </div>
+      <p class="text-[11px] text-[#8C7B73] mb-4">Complimentary local boutique delivery on orders above ₹2,000.</p>
+      <button onclick="showToast('Proceeding to luxury checkout...', 'check')" class="w-full py-3.5 rounded-full bg-[#A66B64] hover:bg-[#925B54] text-white text-xs font-semibold tracking-[0.16em] uppercase transition-all shadow-md">
+        PROCEED TO CHECKOUT →
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       MOBILE NAVIGATION DRAWER
+       ======================================================================== -->
+  <div id="mobile-menu-backdrop" class="drawer-backdrop fixed inset-0 bg-black/50 z-50"></div>
+  <aside id="mobile-menu-drawer" class="mobile-menu-drawer fixed top-0 left-0 h-full w-4/5 max-w-xs bg-[#FAF6F2] shadow-2xl z-50 flex flex-col border-r border-[#EFE4DC] p-6">
+    <div class="flex items-center justify-between pb-6 border-b border-[#EFE4DC]">
+      <div class="flex items-center gap-2">
+        <span class="font-cormorant text-2xl font-medium text-brand-dark">Petal &amp; Bloom</span>
+      </div>
+      <button id="close-mobile-btn" class="text-brand-muted hover:text-brand-dark p-1">
+        <svg fill="none" height="22" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="22">
+          <line x1="18" x2="6" y1="6" y2="18"></line>
+          <line x1="6" x2="18" y1="6" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="flex flex-col space-y-5 py-8 text-sm tracking-[0.18em] font-medium text-[#5A4E48]">
+      <a href="#" class="mobile-nav-link text-brand-rose">HOME</a>
+      <a href="#featured" class="mobile-nav-link hover:text-brand-dark">SHOP BOUQUETS</a>
+      <a href="#services" class="mobile-nav-link hover:text-brand-dark">EVENT DESIGN</a>
+      <a href="#build-bouquet" class="mobile-nav-link hover:text-brand-dark">CUSTOM BOUQUET</a>
+      <a href="#contact" class="mobile-nav-link hover:text-brand-dark">CONTACT &amp; VISIT</a>
+    </nav>
+
+    <div class="mt-auto pt-6 border-t border-[#EFE4DC] text-xs text-[#7A6C65] space-y-2">
+      <p class="font-medium text-brand-dark">Visit Boutique</p>
+      <p>123 Flower Lane, Pune</p>
+      <p class="text-[11px] text-[#8C7E77]">Mon - Sat | 9:00 AM - 7:00 PM</p>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       SEARCH MODAL
+       ======================================================================== -->
+  <div id="search-modal" class="modal-overlay fixed inset-0 bg-black/50 z-50 flex items-start justify-center p-4 sm:pt-20">
+    <div class="modal-content w-full max-w-xl bg-[#FAF6F2] rounded-2xl shadow-2xl border border-[#EFE4DC] overflow-hidden">
+      <div class="p-4 border-b border-[#EFE4DC] flex items-center gap-3">
+        <svg class="text-[#8C7B73]" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+        </svg>
+        <input id="search-input" type="text" placeholder="Search bouquets (e.g. Romance, Grace, Lavender, Roses)..." class="w-full bg-transparent border-none text-sm text-brand-dark focus:ring-0 focus:outline-hidden placeholder:text-[#A0938B]">
+        <button id="close-search-btn" class="text-xs uppercase tracking-wider text-[#8C7B73] hover:text-brand-dark px-2">ESC</button>
+      </div>
+      <div id="search-results" class="p-4 max-h-80 overflow-y-auto space-y-2">
+        <p class="text-xs text-[#8A7971] text-center py-4">Search our luxury arrangements or event services...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       BOUQUET BUILDER WIZARD MODAL
+       ======================================================================== -->
+  <div id="builder-modal" class="modal-overlay fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-2xl bg-[#FAF6F2] rounded-3xl shadow-2xl border border-[#EFE4DC] overflow-hidden flex flex-col max-h-[90vh]">
+      
+      <!-- Modal Header -->
+      <div class="p-6 border-b border-[#EFE4DC] flex items-center justify-between">
+        <div>
+          <span class="text-[10px] tracking-[0.24em] font-medium text-[#8C7B73] uppercase">Bespoke Workshop</span>
+          <h3 class="font-cormorant text-2xl sm:text-3xl font-medium text-brand-dark">Build Your Own Bouquet</h3>
+        </div>
+        <button id="close-builder-btn" class="text-[#8C7B73] hover:text-brand-dark p-1">
+          <svg fill="none" height="22" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="22">
+            <line x1="18" x2="6" y1="6" y2="18"></line>
+            <line x1="6" x2="18" y1="6" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Steps Indicator Bar -->
+      <div class="px-6 py-3 bg-[#F2E8E0] border-b border-[#EFE4DC] flex items-center justify-between overflow-x-auto gap-2">
+        <div id="step-tab-1" class="builder-step-tab flex items-center gap-1.5 active text-xs font-medium text-brand-dark" onclick="setBuilderStep(1)">
+          <span class="builder-icon-wrap w-6 h-6 rounded-full border border-[#D5C2B6] bg-white flex items-center justify-center text-[10px] font-bold">1</span>
+          <span class="hidden sm:inline">Flowers</span>
+        </div>
+        <div id="step-tab-2" class="builder-step-tab flex items-center gap-1.5 text-xs font-medium text-[#7C6E67]" onclick="setBuilderStep(2)">
+          <span class="builder-icon-wrap w-6 h-6 rounded-full border border-[#D5C2B6] bg-white flex items-center justify-center text-[10px] font-bold">2</span>
+          <span class="hidden sm:inline">Quantity</span>
+        </div>
+        <div id="step-tab-3" class="builder-step-tab flex items-center gap-1.5 text-xs font-medium text-[#7C6E67]" onclick="setBuilderStep(3)">
+          <span class="builder-icon-wrap w-6 h-6 rounded-full border border-[#D5C2B6] bg-white flex items-center justify-center text-[10px] font-bold">3</span>
+          <span class="hidden sm:inline">Wrapping</span>
+        </div>
+        <div id="step-tab-4" class="builder-step-tab flex items-center gap-1.5 text-xs font-medium text-[#7C6E67]" onclick="setBuilderStep(4)">
+          <span class="builder-icon-wrap w-6 h-6 rounded-full border border-[#D5C2B6] bg-white flex items-center justify-center text-[10px] font-bold">4</span>
+          <span class="hidden sm:inline">Message</span>
+        </div>
+        <div id="step-tab-5" class="builder-step-tab flex items-center gap-1.5 text-xs font-medium text-[#7C6E67]" onclick="setBuilderStep(5)">
+          <span class="builder-icon-wrap w-6 h-6 rounded-full border border-[#D5C2B6] bg-white flex items-center justify-center text-[10px] font-bold">5</span>
+          <span class="hidden sm:inline">Delivery</span>
+        </div>
+        <div id="step-tab-6" class="builder-step-tab flex items-center gap-1.5 text-xs font-medium text-[#7C6E67]" onclick="setBuilderStep(6)">
+          <span class="builder-icon-wrap w-6 h-6 rounded-full border border-[#D5C2B6] bg-white flex items-center justify-center text-[10px] font-bold">6</span>
+          <span class="hidden sm:inline">Review</span>
+        </div>
+      </div>
+
+      <!-- Step Contents Body -->
+      <div class="flex-1 overflow-y-auto p-6">
+        
+        <!-- Step 1: Choose Flowers -->
+        <div id="step-content-1" class="space-y-4">
+          <h4 class="font-cormorant text-xl font-medium text-brand-dark">1. Select Your Preferred Primary Flowers</h4>
+          <p class="text-xs text-[#7A6C65]">Select one or more flower types for your custom bouquet palette:</p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+            <div onclick="selectFlowerOption(this, 'Ecuadorian Garden Roses')" class="flower-opt border border-[#A66B64] bg-[#FAF3EE] rounded-2xl p-3 text-center cursor-pointer hover:border-brand-rose transition-all">
+              <span class="text-2xl">🌹</span>
+              <p class="text-xs font-medium text-brand-dark mt-1">Garden Roses</p>
+              <span class="text-[10px] text-[#8C7B73]">Classic &amp; Romantic</span>
+            </div>
+            <div onclick="selectFlowerOption(this, 'White Ranunculus')" class="flower-opt border border-[#D5C2B6] bg-white rounded-2xl p-3 text-center cursor-pointer hover:border-brand-rose transition-all">
+              <span class="text-2xl">🌸</span>
+              <p class="text-xs font-medium text-brand-dark mt-1">White Ranunculus</p>
+              <span class="text-[10px] text-[#8C7B73]">Lush &amp; Elegant</span>
+            </div>
+            <div onclick="selectFlowerOption(this, 'French Lavender')" class="flower-opt border border-[#D5C2B6] bg-white rounded-2xl p-3 text-center cursor-pointer hover:border-brand-rose transition-all">
+              <span class="text-2xl">🪻</span>
+              <p class="text-xs font-medium text-brand-dark mt-1">French Lavender</p>
+              <span class="text-[10px] text-[#8C7B73]">Fragrant &amp; Serene</span>
+            </div>
+            <div onclick="selectFlowerOption(this, 'Pastel Hydrangeas')" class="flower-opt border border-[#D5C2B6] bg-white rounded-2xl p-3 text-center cursor-pointer hover:border-brand-rose transition-all">
+              <span class="text-2xl">💐</span>
+              <p class="text-xs font-medium text-brand-dark mt-1">Pastel Hydrangeas</p>
+              <span class="text-[10px] text-[#8C7B73]">Full &amp; Cloudlike</span>
+            </div>
+            <div onclick="selectFlowerOption(this, 'Sunset Buttercups')" class="flower-opt border border-[#D5C2B6] bg-white rounded-2xl p-3 text-center cursor-pointer hover:border-brand-rose transition-all">
+              <span class="text-2xl">🌼</span>
+              <p class="text-xs font-medium text-brand-dark mt-1">Sunset Buttercups</p>
+              <span class="text-[10px] text-[#8C7B73]">Warm &amp; Cheerful</span>
+            </div>
+            <div onclick="selectFlowerOption(this, 'Eucalyptus Greenery')" class="flower-opt border border-[#D5C2B6] bg-white rounded-2xl p-3 text-center cursor-pointer hover:border-brand-rose transition-all">
+              <span class="text-2xl">🌿</span>
+              <p class="text-xs font-medium text-brand-dark mt-1">Baby Eucalyptus</p>
+              <span class="text-[10px] text-[#8C7B73]">Botanical Foliage</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Choose Quantity -->
+        <div id="step-content-2" class="space-y-4 hidden">
+          <h4 class="font-cormorant text-xl font-medium text-brand-dark">2. Choose Arrangement Size &amp; Quantity</h4>
+          <div class="space-y-3 pt-2">
+            <div onclick="selectSizeOption(this, 'Petite Bouquet (10-12 stems)', 1999)" class="size-option border border-[#D5C2B6] bg-white rounded-2xl p-4 flex items-center justify-between cursor-pointer hover:border-brand-rose transition-all">
+              <div>
+                <p class="font-serif text-lg font-medium text-brand-dark">Petite Bouquet</p>
+                <p class="text-xs text-[#8C7B73]">10–12 hand-trimmed stems with accent greens</p>
+              </div>
+              <span class="font-serif text-lg font-medium text-[#A66B64]">₹1,999</span>
+            </div>
+            <div onclick="selectSizeOption(this, 'Signature Bouquet (20 stems)', 2999)" class="size-option border border-[#A66B64] bg-[#FAF3EE] rounded-2xl p-4 flex items-center justify-between cursor-pointer hover:border-brand-rose transition-all">
+              <div>
+                <div class="flex items-center gap-2">
+                  <p class="font-serif text-lg font-medium text-brand-dark">Signature Bouquet</p>
+                  <span class="text-[9px] uppercase tracking-wider bg-[#A66B64] text-white px-2 py-0.5 rounded-full">Most Popular</span>
+                </div>
+                <p class="text-xs text-[#8C7B73]">20 luxury stems with bespoke ribbon finish</p>
+              </div>
+              <span class="font-serif text-lg font-medium text-[#A66B64]">₹2,999</span>
+            </div>
+            <div onclick="selectSizeOption(this, 'Grand Luxury Bouquet (35+ stems)', 4499)" class="size-option border border-[#D5C2B6] bg-white rounded-2xl p-4 flex items-center justify-between cursor-pointer hover:border-brand-rose transition-all">
+              <div>
+                <p class="font-serif text-lg font-medium text-brand-dark">Grand Luxury Bouquet</p>
+                <p class="text-xs text-[#8C7B73]">35+ lavish stems designed for dramatic occasions</p>
+              </div>
+              <span class="font-serif text-lg font-medium text-[#A66B64]">₹4,499</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Choose Wrapping -->
+        <div id="step-content-3" class="space-y-4 hidden">
+          <h4 class="font-cormorant text-xl font-medium text-brand-dark">3. Select Luxury Presentation &amp; Wrapping</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div onclick="selectWrapOption(this, 'Matte Sand Paper & Champagne Silk Ribbon')" class="wrap-option border border-[#A66B64] bg-[#FAF3EE] rounded-2xl p-4 cursor-pointer hover:border-brand-rose transition-all">
+              <p class="font-serif text-base font-medium text-brand-dark">Matte Sand &amp; Silk Ribbon</p>
+              <p class="text-xs text-[#8C7B73] mt-1">Earthy organic tones tied with trailing raw silk.</p>
+            </div>
+            <div onclick="selectWrapOption(this, 'Velvet Blush Box Presentation')" class="wrap-option border border-[#D5C2B6] bg-white rounded-2xl p-4 cursor-pointer hover:border-brand-rose transition-all">
+              <p class="font-serif text-base font-medium text-brand-dark">Velvet Blush Keepsake Box</p>
+              <p class="text-xs text-[#8C7B73] mt-1">Arrives nestled in our signature round hatbox.</p>
+            </div>
+            <div onclick="selectWrapOption(this, 'French Minimalist Frosted Parchment')" class="wrap-option border border-[#D5C2B6] bg-white rounded-2xl p-4 cursor-pointer hover:border-brand-rose transition-all">
+              <p class="font-serif text-base font-medium text-brand-dark">Minimal French Parchment</p>
+              <p class="text-xs text-[#8C7B73] mt-1">Translucent frosted wrap with gold embossed seal.</p>
+            </div>
+            <div onclick="selectWrapOption(this, 'Artisan Ceramic Vase Bundle')" class="wrap-option border border-[#D5C2B6] bg-white rounded-2xl p-4 cursor-pointer hover:border-brand-rose transition-all">
+              <p class="font-serif text-base font-medium text-brand-dark">Handmade Ceramic Vase</p>
+              <p class="text-xs text-[#8C7B73] mt-1">Pre-arranged directly in an artisanal terracotta vase.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Add Message -->
+        <div id="step-content-4" class="space-y-4 hidden">
+          <h4 class="font-cormorant text-xl font-medium text-brand-dark">4. Write a Handwritten Note</h4>
+          <p class="text-xs text-[#7A6C65]">We hand-calligraph your heartfelt words on our cotton deckle-edge cards:</p>
+          <div class="space-y-3 pt-2">
+            <div>
+              <label class="block text-xs font-semibold text-brand-dark mb-1">Recipient Name</label>
+              <input id="builder-recipient-input" type="text" placeholder="e.g. For dearest Sophia" class="w-full rounded-xl border border-[#D5C2B6] bg-white px-3 py-2 text-xs focus:ring-1 focus:ring-brand-rose focus:outline-hidden">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-brand-dark mb-1">Your Personal Message</label>
+              <textarea id="builder-msg-input" rows="3" placeholder="Wishing you a birthday as luminous and radiant as these blooms..." class="w-full rounded-xl border border-[#D5C2B6] bg-white px-3 py-2 text-xs focus:ring-1 focus:ring-brand-rose focus:outline-hidden"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5: Delivery / Pickup -->
+        <div id="step-content-5" class="space-y-4 hidden">
+          <h4 class="font-cormorant text-xl font-medium text-brand-dark">5. Choose Delivery or Boutique Pickup</h4>
+          <div class="space-y-3 pt-2">
+            <div class="grid grid-cols-2 gap-3">
+              <label class="border border-[#A66B64] bg-[#FAF3EE] rounded-2xl p-3 cursor-pointer flex items-center gap-2">
+                <input type="radio" name="builder-delivery-choice" checked class="text-[#A66B64] focus:ring-0">
+                <span class="text-xs font-medium text-brand-dark">Doorstep Delivery (Pune)</span>
+              </label>
+              <label class="border border-[#D5C2B6] bg-white rounded-2xl p-3 cursor-pointer flex items-center gap-2">
+                <input type="radio" name="builder-delivery-choice" class="text-[#A66B64] focus:ring-0">
+                <span class="text-xs font-medium text-brand-dark">Pick Up at Flower Lane</span>
+              </label>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-brand-dark mb-1">Preferred Date</label>
+              <input type="date" value="2026-09-21" class="w-full rounded-xl border border-[#D5C2B6] bg-white px-3 py-2 text-xs focus:ring-1 focus:ring-brand-rose focus:outline-hidden">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 6: Checkout / Review -->
+        <div id="step-content-6" class="space-y-4 hidden">
+          <h4 class="font-cormorant text-xl font-medium text-brand-dark">6. Review Your Bespoke Arrangement</h4>
+          <div id="builder-summary-preview" class="bg-white rounded-2xl p-5 border border-[#E8DDD4] shadow-xs">
+            <!-- Injected via updateBuilderSummary() -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer Controls -->
+      <div class="p-6 border-t border-[#EFE4DC] bg-[#F4EDE7] flex items-center justify-between">
+        <button id="builder-prev-btn" class="px-5 py-2 rounded-full border border-[#8C7A72] text-xs font-medium uppercase tracking-wider text-brand-dark hover:bg-white transition-colors" style="visibility: hidden;">
+          ← BACK
+        </button>
+        <button id="builder-next-btn" class="px-7 py-2.5 rounded-full bg-[#A66B64] text-white text-xs font-medium uppercase tracking-wider hover:bg-[#925B54] transition-all shadow-sm">
+          CONTINUE →
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       EVENT CONSULTATION INQUIRY MODAL
+       ======================================================================== -->
+  <div id="event-inquiry-modal" class="modal-overlay fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-lg bg-[#FAF6F2] rounded-3xl shadow-2xl border border-[#EFE4DC] overflow-hidden p-6 sm:p-8">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <span class="text-[10px] tracking-[0.22em] text-[#8C7B73] uppercase font-medium">Bespoke Floral Styling</span>
+          <h3 class="font-cormorant text-3xl font-medium text-brand-dark">Design My Event</h3>
+        </div>
+        <button id="close-event-modal-btn" class="text-[#8C7B73] hover:text-brand-dark p-1">
+          <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20">
+            <line x1="18" x2="6" y1="6" y2="18"></line>
+            <line x1="6" x2="18" y1="6" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <p class="text-xs text-[#7A6C65] mb-6">Tell us about your upcoming occasion, and our lead florist will curate a custom moodboard &amp; proposal.</p>
+      
+      <form id="event-inquiry-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-brand-dark mb-1">Your Name</label>
+          <input required type="text" placeholder="e.g. Radhika Sharma" class="w-full rounded-xl border border-[#D5C2B6] bg-white px-3 py-2 text-xs focus:ring-1 focus:ring-brand-rose focus:outline-hidden">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-brand-dark mb-1">Phone / WhatsApp</label>
+            <input required type="tel" placeholder="+91 98765 43210" class="w-full rounded-xl border border-[#D5C2B6] bg-white px-3 py-2 text-xs focus:ring-1 focus:ring-brand-rose focus:outline-hidden">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-brand-dark mb-1">Event Type</label>
+            <select id="event-service-type" class="w-full rounded-xl border border-[#D5C2B6] bg-white px-3 py-2 text-xs focus:ring-1 focus:ring-brand-rose focus:outline-hidden">
+              <option value="Weddings">Weddings</option>
+              <option value="Birthdays">Birthdays &amp; Anniversaries</option>
+              <option value="Luxury Car Décor">Luxury Car Décor</option>
+              <option value="Stages & Backdrops">Stages &amp; Backdrops</option>
+              <option value="Corporate Galas">Corporate Events</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-brand-dark mb-1">Estimated Date &amp; Venue</label>
+          <input type="text" placeholder="e.g. November 2026, The Ritz-Carlton, Pune" class="w-full rounded-xl border border-[#D5C2B6] bg-white px-3 py-2 text-xs focus:ring-1 focus:ring-brand-rose focus:outline-hidden">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-brand-dark mb-1">Notes / Desired Floral Aesthetic</label>
+          <textarea rows="3" placeholder="Colors, themes, flower preferences, guest count..." class="w-full rounded-xl border border-[#D5C2B6] bg-white px-3 py-2 text-xs focus:ring-1 focus:ring-brand-rose focus:outline-hidden"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-full bg-[#A66B64] hover:bg-[#925B54] text-white text-xs font-semibold uppercase tracking-[0.16em] transition-all shadow-md">
+          REQUEST CONSULTATION →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       DIRECTIONS / LOCATION MODAL
+       ======================================================================== -->
+  <div id="directions-modal" class="modal-overlay fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-md bg-[#FAF6F2] rounded-3xl shadow-2xl border border-[#EFE4DC] p-6 text-center">
+      <div class="w-14 h-14 rounded-full bg-[#EBDCD4] flex items-center justify-center text-brand-rose mx-auto mb-4">
+        <svg fill="none" height="26" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="26">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+      </div>
+      <h3 class="font-cormorant text-2xl font-medium text-brand-dark mb-1">Petal &amp; Bloom Studio</h3>
+      <p class="text-xs text-[#7A6C65] mb-4">123 Flower Lane, Koregaon Park, Pune, Maharashtra 411001</p>
+      <div class="bg-white p-3 rounded-2xl border border-[#E8DDD4] text-left text-xs text-[#5A4E48] space-y-1 mb-5">
+        <div class="flex justify-between font-medium text-brand-dark">
+          <span>Monday – Saturday</span>
+          <span>9:00 AM – 7:00 PM</span>
+        </div>
+        <div class="flex justify-between text-[#8C7B73]">
+          <span>Sunday</span>
+          <span>10:00 AM – 4:00 PM</span>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <button id="close-directions-btn" class="flex-1 py-2.5 rounded-full border border-[#8C7A72] text-xs font-medium uppercase tracking-wider text-brand-dark hover:bg-white transition-colors">
+          CLOSE
+        </button>
+        <a href="https://maps.google.com/?q=Koregaon+Park+Pune" target="_blank" rel="noopener" class="flex-1 py-2.5 rounded-full bg-[#A66B64] hover:bg-[#925B54] text-white text-xs font-medium uppercase tracking-wider transition-all flex items-center justify-center shadow-xs">
+          OPEN MAPS ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Modular Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "petal-and-bloom",
+  "version": "1.0.0",
+  "description": "Petal & Bloom — Luxury Florist & Event Floral Design Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "florist",
+    "flowers",
+    "event-design",
+    "luxury",
+    "boutique"
+  ],
+  "author": "Petal & Bloom",
+  "license": "ISC"
+}

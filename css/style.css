@@ -1,0 +1,262 @@
+/* ==========================================================================
+   PETAL & BLOOM — LUXURY FLORISTRY & EVENTS DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  --color-brand-bg: #FBF8F5;
+  --color-brand-surface: #F5ECE5;
+  --color-brand-card: #F4ECE4;
+  --color-brand-rose: #A66B64;
+  --color-brand-rose-hover: #925B54;
+  --color-brand-blush: #EBDCD4;
+  --color-brand-soft-border: #E6D7CD;
+  --color-brand-dark: #2A2523;
+  --color-brand-muted: #6E645E;
+  --color-brand-sand: #DFD0C5;
+  
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Base Body Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-dark);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Typography Helpers */
+.font-cormorant {
+  font-family: var(--font-serif);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Luxury Arched Card Geometries */
+.arch-card-top {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.arch-card-full {
+  border-radius: 9999px;
+}
+
+/* Smooth Transitions & Hover Effects */
+.smooth-trans {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-zoom {
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .image-zoom {
+  transform: scale(1.08);
+}
+
+/* Wishlist Heart Active / Liked State */
+.wishlist-btn {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease;
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.2);
+}
+
+.wishlist-btn.active svg {
+  fill: #B47065;
+  stroke: #B47065;
+  filter: drop-shadow(0 2px 6px rgba(180, 112, 101, 0.4));
+}
+
+/* Custom Navigation Link Underline Effect */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--color-brand-rose);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Slide-over Drawers (Cart & Mobile Navigation) */
+.drawer-backdrop {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-menu-drawer {
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-drawer.open {
+  transform: translateX(0);
+}
+
+/* Modal Dialog Animation */
+.modal-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  transform: scale(0.95) translateY(10px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.modal-overlay.open .modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  min-width: 280px;
+  max-width: 380px;
+  background: #2A2523;
+  color: #FAF5F0;
+  padding: 14px 20px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px -5px rgba(42, 37, 35, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: toastIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast.toast-exit {
+  animation: toastOut 0.3s ease forwards;
+}
+
+@keyframes toastIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastOut {
+  to {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+/* Bouquet Builder Step Wizard Styling */
+.builder-step-tab {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.builder-step-tab.active .builder-icon-wrap {
+  background-color: #A66B64;
+  color: #FFFFFF;
+  border-color: #A66B64;
+  box-shadow: 0 4px 12px rgba(166, 107, 100, 0.3);
+}
+
+.builder-step-tab.completed .builder-icon-wrap {
+  background-color: #E2BEB7;
+  color: #2A2523;
+  border-color: #A66B64;
+}
+
+.builder-step-tab:hover .builder-icon-wrap {
+  border-color: #A66B64;
+}
+
+/* Custom Glassmorphic Header & Accents */
+.glass-header {
+  background: rgba(251, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5ECE5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D5C2B6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B69E91;
+}
